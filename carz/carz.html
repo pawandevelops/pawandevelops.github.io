@@ -1,0 +1,630 @@
+<html lang="en" ng-app="myApplication">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Tabs</title>
+    <style>
+        .carousel-inner .carousel-caption h5 {
+            font-size: 1.5rem;
+            color: #ffe600;
+        }
+        
+        .carousel-inner .carousel-caption p {
+            color: #2bb4d6;
+            /* font-size: 1.1rem; */
+        }
+        
+        #footer-section {
+            color: #beadad;
+        }
+        
+        #footer-section a {
+            text-decoration: none;
+        }
+        
+        #modal-social-media {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        #leftover-navigation {
+            text-align: justify;
+        }
+        
+        input.ng-invalid.ng-touched,
+        textarea.ng-invalid.ng-touched {
+            border: 2px solid red;
+        }
+        
+        input[disabled="disabled"] {
+            opacity: 0.4;
+            cursor: not-allowed !important;
+        }
+        
+        small {
+            color: red;
+            display: block;
+            text-align: center;
+        }
+        /* For middle level navbar */
+        
+        .wrapper {
+            margin: 0 auto;
+            position: sticky;
+            top: 0;
+            z-index: 3;
+        }
+        
+        #menu-one {
+            background-color: rgb(0, 44, 95);
+            padding: 5px;
+            margin: 0;
+        }
+        
+        #menu-one a {
+            color: white;
+        }
+        
+        #menu-two {
+            background-color: white;
+            padding: unset;
+            margin: 0;
+        }
+        
+        #menu-two a {
+            color: black;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        nav a {
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            padding: 13px;
+        }
+        
+        nav ul {
+            display: flex;
+        }
+        
+        nav li {
+            flex: 1 1 0;
+        }
+        /* for company name header: CarZ: Dream Car Company */
+        
+        h2 {
+            /* display: none; */
+            position: absolute;
+            top: 155px;
+            left: 110px;
+            font-size: 36px;
+            opacity: 67%;
+            color: #ff0000;
+        }
+        
+        @media screen and ( min-width: 150px) {
+            h2 {
+                position: absolute;
+                top: 110px;
+                left: 110px;
+                font-size: 21px;
+                opacity: 67%;
+                color: #ff0000;
+            }
+        }
+        
+        @media screen and ( min-width: 576px) {
+            h2 {
+                position: absolute;
+                top: 122px;
+                left: 125px;
+                font-size: 26px;
+                opacity: 67%;
+                color: #ff0000;
+            }
+        }
+        
+        @media screen and ( min-width: 768px) {
+            h2 {
+                position: absolute;
+                top: 147px;
+                left: 130px;
+                font-size: 28px;
+                opacity: 67%;
+                color: #ff0000;
+            }
+        }
+        
+        @media screen and ( min-width: 992px) {
+            h2 {
+                position: absolute;
+                top: 155px;
+                left: 115px;
+                font-size: 30px;
+                opacity: 67%;
+                color: #ff0000;
+            }
+        }
+        
+        @media screen and ( min-width: 1200px) {
+            h2 {
+                position: absolute;
+                top: 155px;
+                left: 84px;
+                font-size: 34px;
+                opacity: 67%;
+                /* color: #f30ce7ea; */
+                color: #ff0000;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+
+    <script>
+        var app = angular.module('myApplication', []);
+        app.controller('myController', ['$scope', function($scope) {
+
+            $scope.stateList = [{
+                stateName: "Jammu and Kashmir"
+            }, {
+                stateName: "Himachal Pradesh"
+            }, {
+                stateName: "Punjab"
+            }, {
+                stateName: "Haryana"
+            }, {
+                stateName: "Uttar Pradesh"
+            }, {
+                stateName: "Uttarakhand"
+            }, {
+                stateName: "Rajasthan"
+            }, {
+                stateName: "Bihar"
+            }, {
+                stateName: "Jharkhand"
+            }, {
+                stateName: "Odisha"
+            }, {
+                stateName: "Madhya Pradesh"
+            }, {
+                stateName: "Chhatisgarh"
+            }, {
+                stateName: "Gujarat"
+            }, {
+                stateName: "Assam"
+            }, {
+                stateName: "Arunachal Pradesh"
+            }, {
+                stateName: "Nagaland"
+            }, {
+                stateName: "Sikkim"
+            }, {
+                stateName: "Manipur"
+            }, {
+                stateName: "Mizoram"
+            }, {
+                stateName: "Tripura"
+            }, {
+                stateName: "Meghalaya"
+            }, {
+                stateName: "Kerala"
+            }, {
+                stateName: "Tamil Nadu"
+            }, {
+                stateName: "Andhra Pradesh"
+            }, {
+                stateName: "Karnataka"
+            }, {
+                stateName: "Telangana"
+            }, {
+                stateName: "Maharashtra"
+            }, {
+                stateName: "Goa"
+            }];
+        }]);
+    </script>
+    <div class="container-lg" id="section-one">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container-xxl">
+                <a class="navbar-brand fw-bold ms-3" href="#">
+                    <img id="carz-logo" class="ms-2" src="carz_logo1.jpg" width="40" height="40" alt="CarZ company logo"><span class="fw-bold text-secondary"> 
+                    CarZ
+                    </span>
+                </a>
+                <!-- toggle button for mobile nav -->
+                <button id="menu-toggler-button" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+                <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+                    <ul class="navbar-nav d-flex justify-content-around">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#section-three">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section-four">Offers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section-seven">Queries</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact-us">Contact</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                              </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex justify-content-around ps-5 pt-3">
+                        <input class="form-control me-2" type="search" placeholder="search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Can we solve the modal split problem by using flexbox? Try it once in extra.html -->
+    <div class="container" id="page-heading">
+        <h2>CarZ - Dream Car Company</h2>
+    </div>
+
+    <section id="section-two">
+        <div class="container">
+            <div class="row row-cols-3">
+
+                <div class="col-6">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active" aria-current="page">Home</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="col-6" style="text-align: end;">
+
+                    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <i class="bi bi-upload lead"></i>
+                      </button>
+
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h6 class="modal-title text-primary" id="staticBackdropLabel">Share...</h6>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" id="modal-social-media">
+                                    <a href=""><i class="bi bi-facebook text-primary"></i></a>
+                                    <a href=""><i class="bi bi-twitter text-primary"></i></a>
+                                    <a href=""><i class="bi bi-instagram text-danger"></i></a>
+                                    <a href=""><i class="bi bi-telegram text-primary"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+
+                    <img src="car-banner.jpg" alt="car-logo" width="100%" height="100%">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="wrapper">
+        <nav id="mid-nav-bar">
+            <ul id="menu-one">
+                <li><a href=""><i class="bi bi-geo-alt"></i> Find a Dealer</a></li>
+                <li><a href=""><i class="bi bi-truck"></i> Request a Test Drive</a></li>
+                <li><a href=""><i class="bi bi-cash"></i> Prices</a></li>
+                <li><a href=""><i class="bi bi-card-list"></i> Car Categories</a></li>
+            </ul>
+
+            <ul id="menu-two">
+                <li><a href="" class="fw-bold">CarZ</a></li>
+                <ul id="menu-two-links">
+                    <li><a href="" class="fw-bold">About</a></li>
+                    <li><a href="" class="fw-bold">Performance</a></li>
+                    <li><a href="" class="fw-bold">Safety</a> </li>
+                    <li><a href="" class="fw-bold">Convenience</a></li>
+                    <li><a href="" class="fw-bold">specification</a></li>
+                    <li><a href="" class="fw-bold">Features</a></li>
+                </ul>
+                <li><a href=""><i class="bi bi-file-earmark-arrow-down"></i> Download</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <section id="car-models-text">
+        <div class="container my-5">
+            <h4 class="mt-5">What good is an SUV, if it's not the All-new CRETA. The Ultimate SUV.</h4>
+            <p class="lead text-muted">With a breathtakingly beautiful and edgy design, the All-new CRETA has been crafted to command respect. The bold exterior and the new masculine stance will set you apart from every other SUV on the road.</p>
+
+        </div>
+
+    </section>
+
+    <section id="carousel-section">
+        <div class="container bg-light px-5 py-3">
+            <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3800">
+                        <img class="d-block w-100" src="carousel-one.jpg" alt="All-new CRETA is equipped with Advanced Blue Link featuring the new In-Car Voice Command Technology">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Advanced Connectivity</h5>
+                            <p>The All-new CRETA is equipped with Advanced Blue Link featuring the new In-Car Voice Command Technology. Now with the app on your smart watch and smartphone you have the power to control your car from anywhere.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3300">
+                        <img class="d-block w-100" src="carousel-two.jpg" alt="With the new 1.4 l Petrol, 1.5 l Diesel BS6 engines under the hood, the All-new CRETA delivers a power packed performance on every terrain.">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Ultimate Performance</h5>
+                            <p><span style="color: #164bf7; font-size: 1.1rem;" class="fw-bold">With the new 1.4 l Petrol, 1.5 l Diesel BS6 engines under the hood, the All-new CRETA delivers a power packed performance on every terrain.</span> </p>
+                            <!-- <p><span style="color: #164bf7; font-size: 1.1rem;" class="fw-bold">With the new 1.4 l Petrol, 1.5 l Diesel BS6 engines under the hood, the All-new CRETA </span>delivers a power packed performance on every terrain. </p> -->
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3300">
+                        <img class="d-block w-100" src="carousel-three.jpg" alt="Ultimate Sound - Bose Premium Sound System (8 Speakers)">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Ultimate Sound</h5>
+                            <p>Immerse yourself and make every drive an Ultimate driving experience with the powerful, precision tuned Bose Premium Sound System (8 speakers)</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3300">
+                        <img class="d-block w-100" src="carousel-four.jpg" alt="26.03cm HD Infotainment with Blue Link connectivity">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Intuitive Experience</h5>
+                            <p>With the 26.03 cm HD Infotainment with Blue Link connectivity, stay up to date on all your notifications and get precise navigation on the way to your destination.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-seven">
+        <div class="container my-5 d-flex justify-content-center">
+            <p class="display-6 fw-bold">Go For a test Drive</p>
+        </div>
+
+        <div class="container mx-5">
+            <form class="row row-cols-lg-auto g-3 align-items-center needs-validation" name="contactForm" novalidate>
+                <div class="col-12">
+                    <label for="validationCustom02" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="validationCustom02" placeholder="Otto" name="name" ng-model="index.name" ng-required="true" required>
+                    <div ng-show="contactForm.name.$touched && contactForm.name.$invalid">
+                        <small>Enter a valid name</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom03" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="validationCustom03" placeholder="email" name="email" ng-model="index.email" ng-required="true" />
+                    <div ng-show="contactForm.email.$touched && contactForm.email.$invalid">
+                        <small>Enter a valid email</small>
+                    </div>
+                </div>
+                <br>
+                <div class="col-md-6">
+                    <label for="validationCustom04" class="form-label">City</label>
+                    <input type="text" class="form-control" id="validationCustom04" placeholder="Delhi" name="city" ng-model="index.city" ng-required="true" required>
+                    <div ng-show="contactForm.city.$touched && contactForm.city.$invalid">
+                        <small>Enter a valid city name</small>
+                    </div>
+                </div>
+                <div class="col-md-4" ng-controller="myController">
+                    <label for="validationCustom05" class="form-label">State</label>
+                    <select class="form-select" id="validationCustom05" name="statesList" required>
+                            <option selected disabled>-- states --</option>
+                            <option ng-repeat="state in stateList">{{state.stateName}}</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom06" class="form-label">Pincode</label>
+                    <input type="number" class="form-control" id="validationCustom06" placeholder="999000" name="pincode" ng-model="index.pincode" ng-required="true" min="110000" max="999999" maxlength="6" required>
+                    <div ng-show="contactForm.pincode.$touched && contactForm.pincode.$invalid">
+                        <small>Please provide a valid 6 digit pin code</small>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="checked" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                      Agree to terms and conditions
+                    </label>
+                        <div class="invalid-feedback">
+                            You must agree before submitting.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-5" style="text-align: center;">
+                    <input class="btn btn-primary" value="Send" type="submit" value="Send" ng-disabled="contactForm.$invalid" />
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="text-center text-lg-start bg-dark" id="footer-section">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>CarZ on Social Media: </span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="" class="me-4">
+                    <i class="bi bi-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-success">
+                    <i class="bi bi-google"></i>
+                </a>
+                <a href="" class="me-4 text-danger">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="" class="me-4">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="bi bi-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text mb-4 display-6" style="color: white; text-align: center;">
+                            CarZ
+                        </h6>
+                        <p style="text-align: justify;">
+                            CarZ is a fortune 500 company. We are world's leading automobile innovators and provide vehicles in all price range and sizes. Cars from CarZ are the real deal.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" style="text-align: center;">
+                        <!-- Links -->
+                        <h6 class="text-uppercase mb-4">
+                            CATEGORIES
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">SUVs</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Cars</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Jeeps</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Utility</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" style="text-align: center;">
+                        <!-- Links -->
+                        <h6 class="text-uppercase mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Pricing</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Consult</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Orders</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Help</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="text-align: center;">
+                        <!-- Links -->
+                        <h6 class="text-uppercase mb-4">
+                            Contact
+                        </h6>
+                        <p><i class="bi bi-house-door"></i > New Delhi, 100001 India</p>
+                        <p><i class="bi bi-envelope me-3"></i>contact@carz.com</p>
+                        <p><i class="bi bi-phone me-3"></i>+ 91 3452341</p>
+                        <p><i class="bi bi-telephone-inbound"></i> + 91 5739573</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <hr style="margin-bottom: unset;">
+        <div class="text-center p-4" style="background-color: #0000000d;">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="#">carz.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+
+    <script>
+        var Id_page_heading = document.querySelector("#page-heading");
+        var header_two = document.querySelector("#page-heading h2");
+        var Id_menu_toggler_button = document.querySelector("#menu-toggler-button");
+
+        Id_menu_toggler_button.addEventListener("click", function() {
+            toggle_button_class = document.querySelector("#menu-toggler-button");
+
+            if (toggle_button_class.classList[0] == "navbar-toggler" && toggle_button_class.classList[1] == "collapsed") {
+                var makeHeadingAppear = function() {
+                    Id_page_heading.appendChild(header_two);
+                }
+                setTimeout(makeHeadingAppear, 300);
+            } else {
+                Id_page_heading.removeChild(header_two);
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
+
+</body>
+
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
+    <title>Pawan Develops</title>
+    <style>
+        body {
+            background-image: url('./index-resources/ferrisWheelFive.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        .box {
+            position: relative;
+            top: 20px;
+            left: -80px;
+            width: 350px;
+            height: 60px;
+            background-image: linear-gradient(to right, black, #554d4d, grey);
+            border: 2px solid gold;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+            margin-bottom: 10px;
+            padding-top: 14px;
+            opacity: .55;
+        }
+        
+        .box a {
+            color: yellow;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        
+        .box.hover {
+            text-align: center;
+            opacity: 0.85;
+            animation: slider 0.5s ease forwards;
+        }
+        
+        @keyframes slider {
+            0% {}
+            100% {
+                padding-right: 40px;
+                padding-top: 14px;
+                text-align: right;
+                width: 450px;
+                border-radius: 0 25px 25px 0;
+                background-image: linear-gradient(to right, darkgrey, grey, #554d4d, black);
+            }
+        }
+        
+        .box.shrink {
+            animation: shrinker 0.5s ease forwards;
+        }
+        
+        @keyframes shrinker {
+            0% {
+                width: 450px;
+            }
+            100% {
+                background-image: linear-gradient(to right, black, #554d4d, grey);
+            }
+        }
+        /* tooltip css */
+        
+        .reveal-tooltip {
+            padding: 4px;
+        }
+        
+        .tooltip-inner {
+            padding: 5px;
+            text-align: justify;
+            border: 1px solid green;
+        }
+        
+        .tooltip-inner img {
+            left: 5px;
+            width: 100%;
+            height: 30%;
+        }
+        
+        .tooltip-inner p {
+            color: #bdbdbd;
+            font-size: 12px;
+            padding-right: 4px;
+            padding-left: 4px;
+        }
+        
+        .div-tooltip {
+            position: fixed;
+            top: 10px;
+            left: 20px;
+            color: #fff;
+            padding: 2px 2px;
+            margin: 20px;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div-tooltip">
+
+    </div>
+    <div class="container">
+        <div class="wrapper">
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
+
+
+    <script>
+        let divInnerHtmlArray = [{
+                "id": 1,
+                "className": "tooltip-inner",
+                "imageSource": "./index-resources/darkLight.jpg",
+                "imageAltText": "Preview picture of the dark/light theme changing webpage",
+                "textParaOne": "This page has the facility to change its colour theme.",
+                "textParaTwo": "Features: Colour of the text, background colour changes on clicking the theme change button given at the top right hand corner of the page. The page opens in Dark Mode by default from 10pm to 6am of the local time, or else it open in Light Mode."
+            },
+
+            {
+                "id": 2,
+                "className": "tooltip-inner",
+                "imageSource": "./index-resources/loginForm.jpg",
+                "imageAltText": "Preview picture of the login.html form",
+                "textParaOne": "This page is a demonstration of an aesthetically sound or attractive looking Login Form page.",
+                "textParaTwo": "Features: Circle on left hand panels made & placed using CSS. Form validation using JavaScript for fields: Username, Email and Password."
+            }, {
+                "id": 3,
+                "className": "tooltip-inner",
+                "imageSource": "./index-resources/cssExplained.jpg",
+                "imageAltText": "Preview picture of the page css-explained.html",
+                "textParaOne": "This responsive page explains what CSS Selectors their usage. Selectors are useful for front end decoration and targeting of elements.",
+                "textParaTwo": "Features: Share button having an OffCanvas which contains Social Media links. Dynamically generated line numbers on left of example codes.  Communicate link (in footer) causes an animated pop-up. A right-bottom fixed Go-up button. Portion of the menu which disappears on scroll-down."
+            }, {
+                "id": 4,
+                "className": "tooltip-inner",
+                "imageSource": "./index-resources/carz.jpg",
+                "imageAltText": "Preview picture of the page: carz.html",
+                "textParaOne": "CarZ responsive webpage is for any generic car manufacturer.",
+                "textParaTwo": "Features: A sticky navbar. Carousel of four pics, with auto slide and click function. A form with front end validation. A Modal - to share social media links."
+            }, {
+                "id": 5,
+                "className": "tooltip-inner",
+                "imageSource": "./index-resources/oraExplained.jpg",
+                "imageAltText": "Preview picture of the page: ora-explained.html",
+                "textParaOne": "OraExplained's responsive page to demonstrate using Insert Statements in Oracle SQL.",
+                "textParaTwo": "Features: Dynamically generated 'accept cookies' popup which appears only when scrolled to the bottom of the page. A Form which whose Submit button is not activated till all all entries are properly filled. Use of Pre-tags to demo SQL statements. And, a screen responsive Navigation-bar and Footer."
+            }, {
+                "id": 6,
+                "className": "tooltip-inner",
+                "imageSource": "./index-resources/dailyFlowers.jpg",
+                "imageAltText": "Preview picture of the page: daily-flowers.html",
+                "textParaOne": "Daily Flowers responsive website with a simple layout.",
+                "textParaTwo": "Features: Accordion to present website info in a novel way. Offer Cards to highlight best or trending orders. A feedback section with customers' comments. A Get in touch form to attend to all queries and needs of the clients. A simple footer."
+            }, {
+                "id": 7,
+                "className": "tooltip-inner",
+                "imageSource": "./index-resources/movieWatson.jpg",
+                "imageAltText": "Preview picture of the page: movie-watson.html",
+                "textParaOne": "The page containing movie reviews written by me is made entirely in HTML,CSS and Javascript.",
+                "textParaTwo": "Featurers: A responsive page (desktop & mobile phone) using media query in CSS. Contains Custom Accordion which folds and unfolds the movie review text.  "
+            }
+        ];
+
+        var setUpToolTip = function() {
+
+            var generateInsideTags = function(divInnerHtmlArray, htmlArrayIndexNumber) {
+                var innerDiv = document.createElement("div");
+                innerDiv.setAttribute("class", divInnerHtmlArray[htmlArrayIndexNumber].className);
+                console.log(`divInnerHtmlArray[htmlArrayIndexNumber].className: ${divInnerHtmlArray[htmlArrayIndexNumber].className}`)
+                var imageTag = document.createElement("img");
+                imageTag.src = divInnerHtmlArray[htmlArrayIndexNumber].imageSource;
+                imageTag.setAttribute("alt", divInnerHtmlArray[htmlArrayIndexNumber].imageAltText);
+
+                var pOneTag = document.createElement("P");
+                pOneTag.innerText = divInnerHtmlArray[htmlArrayIndexNumber].textParaOne;
+
+                var pTwoTag = document.createElement("P");
+                pTwoTag.innerText = divInnerHtmlArray[htmlArrayIndexNumber].textParaTwo;
+                innerDiv.append(imageTag, pOneTag, pTwoTag);
+                console.log(innerDiv.innerHTML);
+                // innerDiv.append(pOneTag, pTwoTag, imageTag); // this alters the order of display of inner elements;
+                return innerDiv;
+            }
+
+            var toolTipDiv = document.querySelector(".div-tooltip"),
+                toolTipElements = Array.from(document.querySelectorAll("#reveal-tooltip"));
+
+            var displayToolTip = function(eventObject, objectDiv) {
+                console.log(`objectLi.dataset.tooltip: ${objectDiv.dataset.tooltip}`)
+
+                var indexNumber = objectDiv.dataset.tooltip;
+                var insideDiv = generateInsideTags(divInnerHtmlArray, indexNumber);
+
+                toolTipDiv.appendChild(insideDiv);
+                if (indexNumber == 4 || indexNumber == 5 || indexNumber == 6) {
+
+                    if (indexNumber == 6)
+                        toolTipDiv.style.top = eventObject.pageY - 240 + "px";
+                    else
+                        toolTipDiv.style.top = eventObject.pageY - 160 + "px";
+
+                } else {
+                    toolTipDiv.style.top = eventObject.pageY - 20 + "px";
+                }
+                toolTipDiv.style.left = eventObject.pageX + 125 + "px";
+                fadeIn(toolTipDiv);
+            };
+
+            var fadeOut = function(element) {
+                let op = 1;
+                let timer = setInterval(function() {
+                    if (op <= 0.1) {
+                        clearInterval(timer);
+                        element.style.opacity = 0;
+                        element.style.display = 'none';
+                    }
+                    element.style.opacity = op;
+                    op -= op * 0.1;
+                }, 10);
+            }
+
+            var fadeIn = function(element) {
+                let op = 0.1;
+                element.style.display = 'block';
+                let timer = setInterval(function() {
+                    if (op >= 1) {
+                        clearInterval(timer);
+                    }
+                    element.style.opacity = op;
+                    op += op * 0.1;
+                }, 10);
+
+            }
+
+            toolTipElements.forEach(function(elem) {
+                var timeout;
+                elem.addEventListener("mouseenter", function(mouseEnterEvent) {
+                    var that = this;
+                    timeOut = setTimeout(function() {
+                        displayToolTip(mouseEnterEvent, that);
+                    }, 400);
+                });
+
+                elem.addEventListener("mouseleave", function(mouseLeaveEvent) {
+
+                    clearTimeout(timeOut);
+                    fadeOut(toolTipDiv);
+                    var removeDiv = document.querySelector(".tooltip-inner");
+                    console.log(`removeDiv: ${removeDiv.className}`)
+                    toolTipDiv.removeChild(removeDiv);
+                });
+            })
+        };
+
+
+        var createBoxDiv = function(numberOfBoxes, siteLinks, siteLinkTexts) {
+
+            var divTag = document.querySelector(".wrapper");
+            console.log(`Div tag: ${divTag.className}`)
+            for (var i = 0; i < numberOfBoxes; i++) {
+                var divBox = document.createElement("div");
+                divBox.setAttribute("class", "box");
+                divBox.setAttribute("id", "reveal-tooltip");
+                divBox.setAttribute("data-tooltip", i);
+
+                var aTag = document.createElement("a");
+                aTag.href = siteLinks[i];
+                aTag.target = "_blank";
+                aTag.innerText = siteLinkTexts[i];
+                divBox.appendChild(aTag);
+
+                console.log(divBox);
+                divTag.insertAdjacentElement('beforeend', divBox);
+            }
+        }
+
+        var siteLinksArray = [
+            './colour-theme/coloured.html',
+            './Login_page/login.html',
+            './css-explained/css-explained.html',
+            './carz/carz.html',
+            './ora-explained/ora-explained.html',
+            './daily-flowers/daily-flowers.html',
+            './movie-watson/movie-watson.html'
+        ];
+        var siteLinkTextsArray = ['Coloured Theme Page', 'Login/Register Form', 'Css Explained', 'CarZ', 'Ora-Explained', 'Daily Flowers', 'Movie Watson']
+
+        // Creating links and boxes inside the 'wrapper' class.
+        createBoxDiv(7, siteLinksArray, siteLinkTextsArray);
+
+        var divBoxes = document.querySelectorAll(".box");
+        console.log("The boxes", ...divBoxes);
+        // add time delay on hovering
+        divBoxes.forEach(item => {
+            item.addEventListener("mouseover", function(event) {
+                item.classList.remove("shrink");
+                item.classList.add("hover");
+            });
+        });
+
+        divBoxes.forEach(item => {
+            item.addEventListener("mouseout", function(event) {
+                item.classList.remove("hover");
+                item.classList.add("shrink");
+            });
+        });
+
+        setUpToolTip();
+    </script>
+</body>
+
+</html>

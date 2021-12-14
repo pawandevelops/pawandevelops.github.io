@@ -1,0 +1,363 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Daily Flowers</title>
+    <style>
+        #logo {
+            border-radius: 10px;
+        }
+        
+        .navbar-light {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        
+        .card-text.text-muted {
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container-xxl">
+
+                <a class="navbar-brand fw-bold ms-3" href="#something">
+                    <img id="logo" class="ms-2" src="logo2.png" width="40" height="40" alt="daily flowers logo"><span class="fw-bold text-secondary"> 
+                    Daily Flowers
+                    </span>
+                </a>
+
+                <!-- toggle button for mobile nav -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+                <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#section-three">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section-four">Offers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section-seven">Queries</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact-us">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <section id="section-one">
+        <div class="container tulip-class">
+            <img class="img-fluid" src="flower_header.jpg" alt="tulips" id="tulip-bg">
+        </div>
+    </section>
+
+    <section id="section-three">
+        <div class="container mt-2">
+            <div class="accordion" id="about-us">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#about-us-one" aria-expanded="true" aria-controls="about-us-one">About Daily Flowers</button>
+                    </h2>
+
+                    <div id="about-us-one" class="accordion-collapse collapse show" aria-labelledby="heading-1" data-bs-parent="#about-us">
+                        <div class="accordion-body">
+                            <p class="lead">Daily Flowers is your daily partner to avail fresh flowers.</p>
+                            <p>You can rely on us for the daily flower delivery</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-2">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#about-us-two" aria-expanded="true" aria-controls="about-us-two">Where we are located</button>
+                    </h2>
+
+                    <div id="about-us-two" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#about-us">
+                        <div class="accordion-body">
+                            <p class="text-primary"> we are located in Hauz Khas, New Delhi.</p>
+                            <p class="text-muted">Being a central location, we are able to deliver goods to all the areas of New Delhi. Our delivery agents, on premium charges, can even travel through the Delhi Metro, and thus can deliver flowers on urgent and imminent basis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-3">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#about-us-three" aria-expanded="true" aria-controls="about-us-three">Our Business Model</button>
+                    </h2>
+
+                    <div id="about-us-three" class="accordion-collapse collapse" aria-labelledby="heading-3" data-bs-parent="#about-us">
+                        <div class="accordion-body">
+                            <p class="text-primary"> Local flower growing procurement</p>
+                            <p class="text-muted">We encourage people to grow flowers in their kitchen garden or pots.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-4">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#about-us-four" aria-expanded="true" aria-controls="about-us-four">Deliveries</button>
+                    </h2>
+
+                    <div id="about-us-four" class="accordion-collapse collapse" aria-labelledby="heading-4" data-bs-parent="#about-us">
+                        <div class="accordion-body">
+                            <p class="text-primary"> We deliver flowers in the Delhi-NCR region</p>
+                            <p class="text-muted">Depending upon the package selected, we can deliver as per the client's need.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--  accordion ends -->
+        </div>
+    </section>
+
+    <section id="section-four">
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 mb-3">
+                    <div class="card">
+                        <h5 class="card-header" style="color:rgb(177, 47, 47);">Best Offers</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <p class="lead">Bunch of Roses</p>
+                            </h5>
+                            <p class="card-text text-muted">Roses have always been a classic. They almost do fine in many situations. Here, at Daily Flowers, we have just got the things for you. A good many roses, light on the pocket.</p>
+                            <a href="#" class="btn btn-sm btn-success">Order</a>
+                        </div>
+                        <hr>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <p class="lead">Lily Delight</p>
+                            </h5>
+                            <p class="card-text text-muted">Not so conventional, Lilies? Don't worry, we offer best and fresh lilies. Again, at such good prices, you would want them immediately. Just kidding. But we would like you to try them out for sure.</p>
+                            <a href="#" class="btn btn-sm btn-success">Order</a>
+                        </div>
+                        <hr>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <p class="lead">Garden Beauties</p>
+                            </h5>
+                            <p class="card-text text-muted">An assorted lot. A bunch of different flowers in a bouquet; the effect a garden has on you. With the delight of all the flowers, and on the pocket.</p>
+                            <a href="#" class="btn btn-sm btn-success">Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6">
+                    <div class="card">
+                        <h5 class="card-header" style="color:rgb(47, 103, 177);">What's <span class="badge bg-info">Trending</span></h5>
+
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <p class="lead">Festival special</p>
+                            </h5>
+                            <p class="card-text text-muted">What's the nearest festival list on the calendar? Yes, that one. We've got it covered for you. Make your festive decorations beautiful by adding this charm.</p>
+                            <a href="#" class="btn btn-sm btn-success">Order</a>
+                        </div>
+                        <hr>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <p class="lead" style="color: rgb(236, 41, 41)">All year Valentine</p>
+                            </h5>
+                            <p class="card-text text-muted">We understand that everyday could be a Valentine's day. Though there is a formal Valentine's day, but who cares; celebrate love every day. Make your loved-one feel special. And yes, this package package is also for Valentine's
+                                day.
+                            </p>
+                            <a href="#" class="btn btn-sm btn-success">Order</a>
+                        </div>
+                        <hr>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <p class="text-primary">Refresh Everyday</p>
+                            </h5>
+                            <p class="card-text text-muted">Do we need an excuse to make our surroundings, our home or office, beautiful? No. Get enchanted by the fragrance of flowers we have to offer in this package.</p>
+                            <a href="#" class="btn btn-sm btn-success">Order</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="section-six" style="background-color: #f7dede;">
+        <div class="container py-2">
+            <div class="text-center">
+                <h3><i class="bi bi-stars"></i>What Our Customers Say</h3>
+                <p class="lead">The fruits of our service to our dear customers...</p>
+            </div>
+
+            <div class="row justify-content-center my-5">
+                <div class="col-lg-8">
+                    <div class="list-group">
+                        <div class="list-group-item py-3">
+
+                            <div class="pb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+
+                            <h5 class="mb-1">Fresh Flowers Everyday</h5>
+                            <p class="mb-1">With The Refresh Everyday package, Daily Flowers provide the best of decorative flowers without fail for everday. And this package is the most pocket friendly of all. Now my small office and workspace looks all the more affable
+                                and refeshing, thanks to the utmost sincerity and punctual delivery by Daily Flowers.
+                            </p>
+                            <small>- Anil Kumar</small>
+                        </div>
+
+                        <div class="list-group-item py-3">
+
+                            <div class="pb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <h5 class="mb-1">Innovative packages for special days</h5>
+                            <p class="mb-1">I don't know from where these guys come up with novel ideas everyday. It's like they plan meticulously for every coming special occassion. This year I ordered on almost all festivals and Daily Flowers made it a delight everytime.
+                                The flowers were suited for the occassion. Just for a refreshing change, I would recommend everyone to avail the services of Daily Flowers.
+                            </p>
+                            <small>- Nilesh Sethi</small>
+                        </div>
+
+                        <div class="list-group-item py-3">
+                            <div class="pb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                            </div>
+                            <h5 class="mb-1">They know their customers well</h5>
+                            <p class="mb-1">What would make a great service provider? The one which knows its customers well. And, Daily Flowers is good at this thing. Even if you don't order particularly for a customised set of flowers, and are a frequent customer,
+                                they take care of your tastes and needs.
+                            </p>
+                            <small>- Anamika Kumari</small>
+                        </div>
+
+                        <div class="list-group-item py-3">
+                            <div class="pb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+
+                            <h5 class="mb-1">Good experience so far</h5>
+                            <p class="mb-1"> Although I don't order flowers on a regular basis, but whenever I have ordered them from daily flowers, they've given me a good service. Their delivery associates are friendly and have an eye for arranging the flowers. The
+                                aesthetic sense of these guys are good. I would definitely recommend you guys to give Daily Flowers a try, atleast.
+                            </p>
+                            <small>- Ankur John</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Validation remaining-->
+    <section id="section-seven">
+        <div class="container mt-2">
+            <div class="text-center">
+                <h3>Get In Touch</h3>
+                <p class="lead"> Provide us with your feedback or queries... </p>
+            </div>
+            <div class="row justify-content-center my-3">
+                <div class="col-lg-6 mt-3">
+                    <form class="needs-validation">
+                        <label class="form-label" for="email">Email address: </label>
+                        <div class="mb-4 input-group">
+                            <span class="input-group-text">
+                                <i class="bi bi-envelope-fill"></i>
+                            </span>
+                            <input type="email" class="form-control" id="email" placeholder="e.g. anil@example.com">
+                        </div>
+
+                        <label for="name" class="form-label mt-2">Name: </label>
+                        <div class="mb-4 input-group">
+                            <span class="input-group-text">
+                                <i class="bi bi-person-fill"></i>
+                            </span>
+                            <input type="text" class="form-control" id="name" placeholder="e.g. Patel Kumar">
+                        </div>
+
+                        <label for="subject" class="form-label mt-3">What do you want to talk about ?</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="bi bi-chat-right-dots-fill"></i>
+                            </span>
+                            <select name="subject" id="subject">
+                                <option value="packages" selected>Flower packages</option>
+                                <option value="questions">Questions</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="suggestion">Suggestions</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-floating mt-3">
+                            <textarea id="query" class="form-control" style="height: 140px;"></textarea>
+                            <label for="query" class="form-label">Please provide input text here...</label>
+                        </div>
+
+                        <div class="mt-4 text-center">
+                            <button type="submit" class="btn btn-secondary">Submit</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center text-white" style="background-color: #f5dee1;" id="contact-us">
+        <div class="container pt-2">
+            <section class="mb-3">
+
+                <a class="btn btn-link btn-floating btn-md m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="bi bi-facebook"></i>
+                </a>
+
+                <a class="btn btn-link btn-floating btn-md m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="bi bi-twitter"></i></a>
+
+                <a class="btn btn-link btn-floating btn-md text-muted m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="bi bi-google"></i></a>
+
+                <a class="btn btn-link btn-floating btn-md text-danger m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i <i class="bi bi-instagram"></i></a>
+
+            </section>
+
+        </div>
+        <div class="text-center text-dark p-3" style="background-color: rgba(77, 70, 70, 0.2);">
+            Daily Flowers © 2021
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
+</body>
+
+</html>
+
+</html>

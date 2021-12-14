@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login Form</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main-div">
+        <!-- content for left hand side -->
+        <div class="part-one">
+            <div class="circle circle-zero"></div>
+            <div class="circle circle-one"></div>
+            <div class="circle circle-two"></div>
+            <div class="circle circle-three"></div>
+            <div class="circle circle-four"></div>
+            <div class="circle circle-five"></div>
+            <div class="circle circle-six"></div>
+            <div class="circle circle-seven"></div>
+            <div class="circle circle-eight"></div>
+            <div class="circle circle-nine"></div>
+            <div class="text-box">
+
+                <h2>Explore Good Learning</h2>
+                <h4>By Logging in, you get access to more features</h4>
+                <h4>If you haven't signed up yet, hurry!</h4>
+                <p>GoodLearning.com is a place where you can discover your true potential. If you are out there looking for a change or upskilling, then join us. <span>We have got you covered!</span> </p>
+            </div>
+        </div>
+
+
+        <!-- content for right hand side -->
+        <div class="part-two">
+            <div class="tab-one">
+                <span>Login </span>&nbsp;|&nbsp; <span><a href="register.html"> Register</a></span>
+            </div>
+            <div id="login-id" class="true"></div>
+            <div id="main-form">
+                <form id="form" method="GET">
+                    <h2>Login</h2>
+                    <div class="form-input one">
+                        <label for="name-input"> Username</label>
+                        <br>
+                        <input type="text" id="name-input" name="name" placeholder="amit kumar">
+                        <div class="name-error"></div>
+                    </div>
+
+                    <div class="form-input two">
+                        <label for="email-input"> Email </label>
+                        <br>
+                        <input type="email" name="email" id="email-input" placeholder="amit@example.com">
+                        <div class="email-error"></div>
+                    </div>
+
+                    <div class="form-input three">
+                        <label for="password-input">Password</label>
+                        <br>
+                        <input type="password" name="password" id="password-input"><i class="far fa-eye-slash password-eye" aria-hidden="true"></i>
+                        <div class="password-error"></div>
+                    </div>
+
+                    <button type="submit">Submit</button>
+
+                </form>
+            </div>
+
+            <div class="tab-two">
+                <span><a href="#">Forgot Password?</a></span>
+            </div>
+        </div>
+        <!-- div two ends here -->
+
+    </div>
+
+    <div id="error">
+
+    </div>
+
+    <div class="copyright">
+        <p>&copy;&nbsp;<b>Good Learning Pvt. Ltd. All rights reserved.</b></p>
+    </div>
+
+    <script src="validation.js"></script>
+</body>
+
+</html>

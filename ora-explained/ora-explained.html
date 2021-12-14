@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Ora-Explained: Oracle INSERT SQL DMLs</title>
+    <style>
+        #search-bar-input {
+            border: 3px solid #198754;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #3271b9;
+        }
+        
+        #modal-social-media {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        #section-two {
+            text-align: justify;
+        }
+        
+        .pre-container {
+            background-color: #f5e5ef;
+            border: 1px solid #e29898;
+        }
+        
+        input.ng-invalid.ng-touched,
+        textarea.ng-invalid.ng-touched {
+            border: 2px solid red;
+        }
+        
+        input[disabled="disabled"] {
+            opacity: 0.4;
+            cursor: not-allowed !important;
+        }
+        
+        small {
+            color: red;
+            display: block;
+            text-align: center;
+        }
+        
+        #section-four {
+            background-color: antiquewhite;
+        }
+        
+        #footer {
+            background-color: #57454575;
+            font-weight: bold;
+            color: black;
+            border-radius: 10px;
+            position: fixed;
+            bottom: 0px;
+            text-align: center;
+            border: 1px solid blueviolet;
+            margin: auto 110px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
+    <a id="TOP"></a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-xxl">
+            <a class="navbar-brand" href="/"><img class="ms-2" src="oraExplained.jpg" alt="oraExplained Logo" /></a>
+            <!-- toggle button for mobile nav -->
+            <button id="menu-toggler-button" class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+                <ul class="navbar-nav d-flex justify-content-around">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Scripts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Extra
+                          </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#">SQL Challenge </a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Self Evaluation</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Query Discrepancies</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex justify-content-around ps-5 pt-3">
+                    <input id="search-bar-input" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success border border-2 border-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <section id="section-one">
+        <div class="container mt-1">
+            <div class="row row-cols-2">
+
+                <div class="col-6">
+                    <nav style="--bs-breadcrumb-divider: '»';" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Articles</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Here</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="col-6" style="text-align: end;">
+
+                    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <i class="bi bi-share-fill"></i>
+                      </button>
+
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h6 class="modal-title text-primary" id="staticBackdropLabel">Share...</h6>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" id="modal-social-media">
+                                    <a href=""><i class="bi bi-facebook text-primary"></i></a>
+                                    <a href=""><i class="bi bi-twitter text-primary"></i></a>
+                                    <a href=""><i class="bi bi-instagram text-danger"></i></a>
+                                    <a href=""><i class="bi bi-telegram text-primary"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="section-two">
+        <div class="container">
+            <h3> INSERT statements in Oracle SQL</h3>
+            <p>INSERT statement or command is a DML command or Data Manipulation Language command. DMLs affect the data stored in a table, and don't affect the structure of a table. An Insert statement helps to add a row to a table ( or in some cases, a
+                view ).</p>
+
+            <p> Commands that modify data are called DMLs. DMLs involve inserting data into tables, retrieving existing data, deleting data from existing tables and modifying existing data.</p>
+
+            <p>Other than INSERT; UPDATE & DELETE are also DMLs. The names of these commands also hint at the obvious functions which they may perform in a table (generally), i.e. UPDATE is used to update a record and DELETE is used to remove a record.</p>
+
+            <p>Before we go ahead and execute an INSERT statement, we must have a table to add records. In the following DDL (Data Definition Language) i.e. CREATE TABLE, we have created the table Acctmanager. </p>
+
+            <p>The table Acctmanager has columns: amId, amFirst, amLast, amDate, amSal, amComm and region. The table has amId as its primary key. This means all amIds must be unique and they cannot a NULL value. A CHECK constraint has also been placed on
+                the table. This constraint allows only eight accepted values that could be entered for the Region column. </p>
+
+            <p class="fs-6 fw-bold">The following CREATE TABLE statement creates the Table Acctmanager in the database: </p>
+            <pre class="pre-container one p-3">
+SQL> CREATE TABLE acctmanager
+  2  (amid CHAR(4),
+  3  amfirst VARCHAR2(12) NOT NULL,
+  4  amlast VARCHAR2(12) NOT NULL,
+  5  amedate DATE DEFAULT SYSDATE,
+  6  amsal NUMBER(8,2),
+  7  amcomm NUMBER(7,2) DEFAULT 0,
+  8  region CHAR(2),
+  9  CONSTRAINT acctmanager2_amid_pk PRIMARY KEY (amid),
+ 10  CONSTRAINT acctmanager2_region_ck
+ 11  CHECK (region IN ('N', 'NW', 'NE', 'S', 'SE', 'SW', 'W', 'E')));
+
+Table created.
+</pre>
+            <p>Once the table Acctmanager has been created, we can start inserting records in it by using INSERT statements.</p>
+            <p class="fs-6 fw-bold">The INSERT statement has the following syntax:</p>
+            <p><span class="lead" style="color:crimson">INSERT INTO</span> tablename [<span style="color:#198754">(column name1, column name2...)</span>] <span class="lead" style="color: crimson;"> VALUES </span><span style="color:#4c4cd4;">( data value1, data value2 ... )</span>;</p>
+            <p>Here, table name is the table in which we want to insert a row into. In our case, we are going to insert a row into the table Acctmanager.</p>
+            <p>In the above INSERT statement syntax, column names are optional. This means they may be omitted in certain cases as per our need.</p>
+            <p>The keywords INSERT, INTO and VALUES must be written exactly as they are. Although Oracle SQL is not case sensitive, but by convention we will use these keywords in uppercase.</p>
+            <p class="text-muted fw-bold">First Case: Without a column list</p>
+            <p><span class="fw-bold">This is done when all input column values for a row are given. </span> If the data entered in the VALUES clause contains a value for every column and is in the same order as columns in the table, column names can be omitted
+                in the INSERT INTO clause.</p>
+            <p>The INSERT statement for the first case:</p>
+
+            <pre class="pre-container two p-3">
+SQL> INSERT INTO acctmanager
+  2  VALUES ( 'T500', 'NICK', 'TAYLOR', '05-SEP-2009', 42000, 3500, 'NE');
+       
+1 row created.
+        </pre>
+            <p>We can check the newly inserted row in the table Acctmanager with the help of following SQL statement: </p>
+            <pre class="pre-container three p-3">
+SQL> SELECT * FROM Acctmanager;
+
+AMID AMFIRST      AMLAST       AMEDATE        AMSAL     AMCOMM REGION
+---- ------------ ------------ --------- ---------- ---------- ----------
+T500 NICK         TAYLOR       05-SEP-09      42000       3500 NE
+</pre>
+            <p class="text-muted fw-bold">Second Case: When one or more columns is omitted</p>
+            <p>If you enter data for only some columns, or if columns are listed in a different order than they’re listed in the table, the column names must be provided in the INSERT INTO clause in the same order as they’re given in the VALUES clause. You
+                must list the column names inside parentheses after the table name in the INSERT INTO clause. </p>
+            <ul>
+                <li>If more than one column is listed, column names must be separated by commas.</li>
+                <li>If more than one data value is entered, the values must be separated by commas.</li>
+                <li>You must use single quotes to enclose nonnumeric data inserted in a column.</li>
+            </ul>
+            <p>The INSERT statement for this case is as follows:</p>
+            <pre class="pre-container four p-3">
+SQL> INSERT INTO acctmanager (amid, amfirst, amlast, amsal, amcomm, region)
+  2  VALUES('J500', 'SAMMIE', 'JONES', 39500, 2000, 'NW');
+  
+1 row created.
+</pre>
+            <p>In the above INSERT statement, the column amedate wasn't listed in the column list. There are only six column names mentioned in the column list. The VALUES clause of the statement contains the corresponding values for the columns.</p>
+            <p>The amedate column's value would be inserted by default as the system date. This is because in the CREATE TABLE we declared amedate to be of DATE datatype and to have a DEFAULT SYSDATE value in case it is omitted in the INSERT statement.</p>
+            <p>To see the record having amid as J500, we use this SELECT query, which is as follows: </p>
+            <pre class="pre-container five p-3">
+SQL> SELECT * FROM acctmanager WHERE amid = 'J500';
+
+AMID AMFIRST      AMLAST       AMEDATE        AMSAL     AMCOMM REGION
+---- ------------ ------------ --------- ---------- ---------- ----------
+J500 SAMMIE       JONES        02-OCT-21      39500       2000 NW
+</pre>
+            <p>In the above SELECT query, we can see that column amedate has the date: 02-OCT-21 as its value. This is the date of the system on which ORACLE database was hosted, i.e. it is the system date. Hence, a column name can be omitted and a record
+                could be added to a table in this fashion also.</p>
+
+            <p class="text-muted fw-bold">Third Case: Inserting a NULL value</p>
+            <p>In the above case, suppose we are not sure to include amedate of a record, then we can simply use the keyword NULL. Also, like our fist case, here the column list could be omitted, but then the VALUES list must contain corresponding column
+                values in the same order as the columns were declared in the CREATE TABLE statement.</p>
+            <p>The INSERT statement for this case is as follows:</p>
+            <pre class="pre-container six p-3">
+SQL> INSERT INTO acctmanager
+  2  VALUES ('L500', 'MANDY', 'LOPEZ', NULL, 47000, 1500, 'NW');
+               
+1 row created. </pre>
+            <p>This INSERT statement would add a record for the person Mandy Lopez with amedate as NULL. We can check the latest inserted row with the help of the following SELECT query: </p>
+            <pre class="pre-container seven p-3">
+SQL> SELECT * FROM acctmanager WHERE amid = 'L500';
+
+AMID AMFIRST      AMLAST       AMEDATE        AMSAL     AMCOMM REGION
+---- ------------ ------------ --------- ---------- ---------- ----------
+L500 MANDY        LOPEZ                       47000       1500 NW
+</pre>
+            <p>We can see the output of the SELECT query. Here under the column name Amedate, the correspoding record value is NULL, which is represented as a blank here.</p>
+            <p>Once we have finished our work of adding records to a table, a COMMIT command must be issued in order to save the work. This command is irreversible and helps in making the record permanent in the table. This could be done as follows:</p>
+            <pre class="pre-container eight p-3">
+SQL> commit;
+
+Commit complete.
+</pre>
+            <br>
+            <p>So far, we have inserted three records to the table. In order to view them all, we would use the following SELECT query: </p>
+            <pre class="pre-container nine p-3">
+SQL> SELECT * FROM acctmanager;
+
+AMID AMFIRST      AMLAST       AMEDATE        AMSAL     AMCOMM REGION
+---- ------------ ------------ --------- ---------- ---------- ----------
+T500 NICK         TAYLOR       05-SEP-09      42000       3500 NE
+J500 SAMMIE       JONES        02-OCT-21      39500       2000 NW
+L500 MANDY        LOPEZ                       47000       1500 NW </pre>
+            <br>
+            <p>This was all about the INSERT statement or command in Oracle SQL. </p>
+            <br>
+            <p> <b>If you have any queries or any comments, you can post them down below:</b></p>
+
+        </div>
+    </section>
+
+    <section id="section-three" ng-app>
+        <div class="container">
+            <form class="row row-cols-lg-auto g-3 align-items-center needs-validation" name="contactForm" novalidate>
+                <div class="col-12">
+                    <label for="validationCustom02" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="validationCustom02" placeholder="Otto" name="name" ng-model="index.name" ng-required="true" required>
+                    <div ng-show="contactForm.name.$touched && contactForm.name.$invalid">
+                        <small>Enter a valid name</small>
+                    </div>
+                </div>
+                <label for="subject" class="form-label mt-3">What do you want to talk about ?</label>
+                <div class="input-group col-12">
+                    <select name="subject" id="subject">
+                        <option value="questions">Question(s)</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="suggestion">Suggestion(s)</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="container col-12">
+                    <textarea name="textarea" id="query" class="form-control" style="height: 140px;" ng-model="index.textarea" ng-requried="true" placeholder="Please provide input text here..." required></textarea>
+                    <div ng-show="contactForm.textarea.$touched && contactForm.textarea.$invalid">
+                        <small>Enter something </small>
+                    </div>
+                    <label for="query" class="form-label"></label>
+                </div>
+                <div class="col-12 mt-5" style="text-align: center;">
+                    <input class="btn btn-primary" value="Submit" type="submit" ng-disabled="contactForm.$invalid" />
+                </div>
+            </form>
+            <p><a href="#TOP">Back to the Top.</a></p>
+        </div>
+    </section>
+
+
+    <section id="section-four">
+        <div class="container d-flex justify-content-center text-center mt-5">
+            <p class="mt-3">
+                <a href="#">Home</a> |
+                <a href="#">Articles</a> |
+                <a href="#">Scripts</a> |
+                <a href="#">Blog</a> |
+                <a href="#">Misc</a> |
+                <a href="#">About</a>
+            </p>
+        </div>
+        <div class="container d-flex justify-content-center text-center mt-3">
+            <p>
+                <a href="#">About Ora Explained</a><br>
+                <a href="#">Copyright &copy; Ora-Explained&trade; 2021</a><br>
+            </p>
+            <br>
+        </div>
+    </section>
+    <hr style="opacity:0%;">
+
+    <div id="last-container"></div>
+
+    <script>
+        var ifButtonsClicked = false;
+        var ifPageBottomReachedOnce = false;
+
+        window.onscroll = function(ev) {
+            if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight &&
+                ifButtonsClicked === false &&
+                ifPageBottomReachedOnce === false) {
+
+                ifPageBottomReachedOnce = true;
+                var newFooterDiv = document.createElement("div");
+                newFooterDiv.setAttribute("id", "footer");
+                newFooterDiv.setAttribute("class", "px-5 pt-2");
+
+                var bodyLastDiv = document.querySelector("#last-container");
+                bodyLastDiv.appendChild(newFooterDiv);
+
+                var footer = document.querySelector("#footer");
+
+                footer.innerHTML = `<p>
+                    Ora-Explained uses cookies to provide necessary website functionality, improve your experience and analyze our traffic.
+                    <button type="button" class="btn-close footerCloseButton" aria-label="Close"></button>
+                    </p>
+                    <button class="btn btn-primary footerCloseButton">Accept</button>
+                    &nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-secondary footerCloseButton">Decline</button>
+                    <hr style="opacity:0;">`;
+                var footerCloseButton = document.querySelectorAll(".footerCloseButton");
+                console.log("Footer close button: ", footerCloseButton);
+
+                footerCloseButton.forEach(function(currentBtn) {
+                    currentBtn.addEventListener("click", function() {
+                        footer.style.display = "none";
+                        ifButtonsClicked = true;
+                    });
+                });
+
+            }
+        };
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</body>
+
+</html>

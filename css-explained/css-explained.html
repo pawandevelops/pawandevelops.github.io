@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <title>Css Properties Explained</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Andada+Pro:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+        body {
+            font-family: 'Andada Pro', serif;
+            position: relative;
+        }
+        /* menu styling */
+        
+        .wrapper {
+            margin: 0 auto;
+            position: sticky;
+            top: 0;
+            z-index: 3;
+        }
+        
+        #menu-one {
+            background-color: #003572;
+            padding: 5px;
+            margin: 0;
+        }
+        
+        #menu-one a {
+            color: #f1f1f1;
+        }
+        
+        #menu-one li:nth-child(1) a {
+            color: #ffde23;
+            margin-left: -14px;
+            font-size: 19px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            /*border: 2px solid #ffffff;
+            border-radius: 6px; */
+        }
+        
+        #menu-two.visible {
+            background-color: #f7f7f7;
+            box-shadow: 0px 10px 14px #c2c2c2;
+            padding: unset;
+            margin: 0;
+            opacity: 1;
+            transition: all 0.4s ease-out;
+        }
+        
+        #menu-two.hidden {
+            opacity: 0;
+        }
+        
+        #menu-two a {
+            color: black;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        nav a {
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            padding: 8px;
+        }
+        
+        nav ul {
+            display: flex;
+        }
+        
+        nav li {
+            flex: 1 1 0;
+        }
+        /* Section One */
+        
+        #section-one {
+            text-align: justify;
+        }
+        
+        .writer {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #e4e4e4;
+            border-bottom: 1px solid #e4e4e4;
+            padding: 0;
+        }
+        
+        .writer p:nth-child(1) {
+            color: #3a3a7c;
+            padding-top: 10px;
+        }
+        
+        .writer p:nth-child(2) {
+            color: #ce0101;
+            padding-top: 10px;
+        }
+        
+        .tags-share {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #e4e4e4;
+        }
+        
+        .tags-share ul:nth-child(1) {
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+            margin-top: 10px;
+            margin-left: -30px;
+        }
+        
+        .tags-share ul:nth-child(1) li {
+            padding: 7px 5px 7px 5px;
+            display: inline-block;
+            margin: auto 5px;
+            border: 2px solid #e4e4e4;
+            border-radius: 6px;
+            /*adding transition to increase scale on hovering the mouse over the LIs */
+            transition: all 0.19s linear;
+        }
+        
+        .tags-share ul:nth-child(1) li:hover {
+            border: 2px solid #9b9b9b;
+            transform: scale(1.35);
+            background-color: white;
+        }
+        
+        .tags-share ul:nth-child(1) li a {
+            text-decoration: none;
+            font-family: sans-serif;
+            font-size: 0.8em;
+            color: #9b9b9b;
+        }
+        
+        .tags-share ul:nth-child(2) {
+            color: grey;
+            list-style-type: none;
+            margin-top: 18px;
+            margin-right: 16px;
+        }
+        
+        .tags-share ul:nth-child(2):hover {
+            list-style-type: none;
+            margin-top: 19px;
+        }
+        
+        .tags-share li {
+            flex: 1 1 auto;
+        }
+        /* for setting up the pre tags */
+        
+        pre {
+            /* tab-size: 10; */
+            counter-reset: linecounter;
+            padding: 0;
+            color: #000000;
+            font-size: 14px;
+            background-color: #e0fdfd;
+            border: 1px solid #919da3;
+            width: 80%;
+            margin: 5px auto;
+            border-radius: 6px;
+        }
+        
+        pre span.line {
+            counter-increment: linecounter;
+        }
+        
+        pre span.line::before {
+            content: counter(linecounter) " ";
+            color: #3e3e6b;
+            width: 30px;
+            display: inline-block;
+            border-right: 1px dotted #eb7575;
+            padding-right: 3px;
+            text-align: right;
+        }
+        
+        pre span.line:nth-child(odd)::before {
+            background-color: #a8d1e9;
+        }
+        
+        pre span.line:nth-child(even)::before {
+            background-color: beige;
+        }
+        /* pre styling ends here */
+        /* OffCanvas Styling */
+        
+        #offcanvas-label {
+            color: #405566;
+        }
+        
+        #offcanvasRight {
+            background-color: #fff7f7;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        
+        .sm-cont {
+            text-align: center;
+            background-color: #f4ffff;
+            transition: all 0.15s ease-in;
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0px 10px 90px;
+            border: 1px solid #4d4dee;
+            border-radius: 6px;
+            width: 50%;
+            opacity: 0.8;
+        }
+        
+        .sm-cont:hover {
+            transform: scale(1.35);
+            border: 2px solid #4d4dee;
+            opacity: 1;
+        }
+        
+        .sm-cont i {
+            padding: 0px 5px 0px 5px;
+            color: #4d4dee;
+            border-right: 2px solid #4d4dee;
+        }
+        
+        .sm-cont a {
+            text-decoration: none;
+            color: #405566;
+        }
+        
+        .sm-cont a span {
+            text-align: left;
+            padding-right: 10px;
+        }
+        /* footer CSS */
+        
+        #section-three {
+            background: #252a2e;
+        }
+        
+        #section-three a {
+            color: grey;
+            text-decoration: none;
+            transition: all 0.2s ease-in;
+        }
+        
+        #section-three a:hover,
+        #section-three a:focus {
+            text-decoration: none;
+            color: #95c0cf;
+        }
+        
+        .form-control {
+            background: #212529;
+            border-color: #545454;
+            color: #e2e2e2;
+        }
+        
+        .form-control:focus {
+            background: #212529;
+            color: #e2e2e2;
+        }
+        
+        #copyright {
+            border-top: 2px solid #6f6f74;
+            padding-top: 8px;
+        }
+        /* upward arrow */
+        
+        #section-four {
+            position: fixed;
+            margin-right: 20px;
+            text-align: center;
+            height: 40px;
+            width: 40px;
+            border: 2px solid rgb(255, 215, 0.788);
+            border-radius: 25px;
+            background-color: rgba(0, 128, 0, 0.788);
+            bottom: 15px;
+            right: 10px;
+            transition: all 0.15s ease-in;
+        }
+        
+        #section-four:hover {
+            transform: scale(1.2);
+        }
+        
+        #top-button {
+            padding-top: 4px;
+            color: #fffefe;
+        }
+        
+        #top-button a {
+            text-decoration: none;
+            color: unset;
+        }
+        /* popup connect form */
+        
+        .popUpContainer h3 {
+            font-size: 34px;
+            margin: 10px 0;
+            color: #176497;
+        }
+        
+        .popUpContainer p {
+            margin-bottom: 35px;
+        }
+        
+        .popUpContainer span {
+            color: #176497;
+        }
+        
+        #pop-up {
+            position: relative;
+            top: 150px;
+            width: 450px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        #pop-up .popUpContainer {
+            background: #f0e4d4;
+            padding: 30px;
+            position: absolute;
+            top: 50px;
+            width: 90%;
+            border: 3px solid #ff7777;
+            border-radius: 15px;
+            box-sizing: border-box;
+            box-shadow: 4px 4px 6px #585858;
+        }
+        
+        #pop-up input {
+            padding: 10px;
+            border: 0;
+            border-radius: 10px 0 0 10px;
+            border: 1px solid #333;
+            font-size: 16px;
+        }
+        
+        .popUpContainer button {
+            padding: 10px;
+            border: 0;
+            color: #fff;
+            background: #333;
+            margin-left: -5px;
+            margin-left: -5px;
+            border-radius: 0 10px 10px 0;
+            border: 1px solid #333;
+            font-size: 16px;
+        }
+        
+        .popUpContainer button {
+            cursor: pointer;
+        }
+        
+        .cross {
+            position: absolute;
+            top: 10px;
+            cursor: pointer;
+            right: 10px;
+            background: #555;
+            color: #ddd;
+            font-weight: bold;
+            width: 22px;
+            height: 22px;
+            text-align: center;
+            border-radius: 11px;
+        }
+        
+        #pop-up {
+            top: -350px;
+            transform-origin: 10px 10px;
+            animation: popUpDrop 1s 0.3s ease forwards;
+        }
+        
+        @keyframes popUpDrop {
+            0% {
+                opacity: 0;
+            }
+            65% {
+                transform: translateY(4400px);
+                opacity: .7;
+            }
+            100% {
+                transform: translateY(4330px);
+                opacity: 1;
+            }
+        }
+        /*other stylings */
+        
+        h1 {
+            color: #414161;
+            font-size: 46px;
+        }
+        
+        h1 span {
+            text-shadow: 0px 0px 30px #727272;
+        }
+        
+        h1 i {
+            color: green;
+        }
+        
+        h3 {
+            color: #fc4639;
+        }
+        
+        code {
+            padding: 4px 4px 1px;
+            background-color: #f5f7f8;
+            border: 1px solid #c5c5c5;
+            border-radius: 4px;
+            font-size: 15px;
+            color: #6a1cb3;
+        }
+        
+        .article {
+            padding-top: 10px;
+        }
+        
+        .article.eight {
+            text-align: justify;
+        }
+        
+        .article p:nth-child(1)::first-letter {
+            font-size: 38px;
+            color: #df3131;
+        }
+        
+        #communicate {
+            color: #FF3300;
+            border: 1px solid grey;
+            padding: 3px;
+            display: inline;
+        }
+        
+        #communicate:hover {
+            background-color: skyblue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="#top" id="topHREF"></a>
+    <div class="wrapper">
+        <nav id="mid-nav-bar">
+            <ul id="menu-one">
+                <li><a href="">CssExplained</a></li>
+                <li>
+                    <a href=""> <i class="fas fa-users"></i> Community</a>
+                </li>
+                <li><a href=""><i class="bi bi-chat-right-dots"></i></i> Forum</a></li>
+                <li><a href=""><i class="fas fa-hands-helping"></i> Help</a></li>
+            </ul>
+
+            <ul id="menu-two" class="visible">
+                <li><a href="" class="fw-bold">Home</a></li>
+                <ul id="menu-two-links">
+                    <li><a href="" class="fw-bold">LinkOne</a></li>
+                    <li><a href="" class="fw-bold">LinkTwo</a> </li>
+                    <li><a href="" class="fw-bold">LinkThree</a></li>
+                    <li><a href="" class="fw-bold">Extra</a></li>
+                </ul>
+                <li><a href="#"><i class="bi bi-file-earmark-arrow-down"></i></i> FAQs</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section id="section-one">
+        <div class="container mt-5">
+            <h1><i class="fab fa-css3-alt mt-3"></i> <span>CSS Selectors</span></h1>
+            <div class="writer">
+                <p>By Pawan Vivek</p>
+                <p>26<sup>th</sup> October, 2021</p>
+            </div>
+
+            <div class="tags-share">
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Front-End</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">CSS Selectors</a></li>
+                </ul>
+
+                <ul>
+
+                    <li>
+                        <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fas fa-share-alt fa-lg"></i></button>
+                    </li>
+
+
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header">
+                            <h4 id="offcanvas-label">Share this on ...</h4>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <hr>
+                        <div class="offcanvas-body">
+                            <div class="sm-cont">
+                                <i class="bi bi-facebook" style="color: #3b5998;"></i>
+                                <a href="#"><span>Facebook</span></a>
+                            </div>
+                            <div class="sm-cont">
+                                <i class="bi bi-instagram" style="color:#f03f3f;"></i>
+                                <a href="#"><span>Instagram</span></a>
+                            </div>
+                            <div class="sm-cont">
+                                <i class="bi bi-telegram" style="color: #0088cc;"></i>
+                                <a href="#"><span>Telegram</span></a>
+                            </div>
+                            <div class="sm-cont">
+                                <i class="bi bi-github" style="color: #525050;"></i>
+                                <a href="#"><span>Github</span></a>
+                            </div>
+                            <div class="sm-cont">
+                                <i class="bi bi-twitter" style="color: #1DA1F2;"></i>
+                                <a href="#"><span>Twitter</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+            <p class="mt-3"><span class="lead">CSS Properties</span> are useful in altering the way in which a webpage is presented. The visual aspects of a page could be one of the deciding factors in a page's popularity. However, to use the CSS properties, different
+                tags or their comninations would have to be selected.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class='span-not'>Given below</span> are a few <span class="lead">CSS Selectors</span> which might come in handy and save you a lot of trouble. If used in a proper and logical way, they would make your pages to
+                transact faster and better. Therefore, it becomes imperative that you go through these, and if needed have ample practice to understand their functions in entirety.</p>
+        </div>
+    </section>
+
+    <section id="section-two">
+        <div class="container mt-3">
+            <h3>Basic Selectors</h3>
+
+            <article class="article one">
+                <p>1. <code>#</code></p>
+                <p>The #id selector is used to target the ids associated with elements or tags in an HTML page. Almost all the tags could be given a unique id. And it is through the use of symbol Hash(#) we can target or access the desired tag.</p>
+                <p>The syntax for this is simple: use <code>id</code></p>
+                <p>This would become amply clear from the following example. Given below is the <code>&lt;div&gt;</code> tag with an id of <b>content</b>. In order to target and add desired CSS properties to it, we can use the <code>#id</code> selector.
+                </p>
+                <pre>
+  &lt;div id="content"&gt;
+      &lt;p&gt;Hello, World!&lt;/p&gt;
+  &lt;/div&gt;
+            </pre>
+
+                <p>The CSS Selector would be as follows:</p>
+                <pre>
+  #content {
+      color: red;
+  }
+</pre>
+                <p>The above piece of CSS property would target the <code>&lt;div&gt;</code> element with an id of <code>content</code>. Once it has been selected, the CSS property of colour could be altered or added to it. In our case, we chose that the
+                    font colour of the content inside the <code>&lt;div&gt;</code> tag should be red.</p>
+
+            </article>
+
+            <article class="article two">
+                <p>2. <code>*</code></p>
+                <pre>
+  * {
+    margin: 0;
+    color: blue;
+  }
+</pre>
+
+                <p>The star symbol targets every single element on a page. In the above example, it has been used to set <code>margin</code> and <code>padding</code> to zero.</p>
+                <p>While it may be convenient to use <code>*</code> to get the desired results. But since it targets every element on a page, as it adds too much weight on the browser and is unnecessary.</p>
+                <p>The <code>*</code> could also be used with child selectors. For instance:</p>
+                <pre>
+ &lt;div id="container"&gt;
+    &lt;div&gt;
+        "If you want to be happy, be."
+    &lt;/div&gt;
+    &lt;section&gt;
+        These lines were told by Leo Tolstoy, who was a great Russian novelist.
+    &lt;/section&gt;
+ &lt;/div&gt;
+</pre>
+
+                <p>Now, to target all the elements within the div with "container" id, we can simply use the <code>*</code></p>
+                <pre>
+  #container * {
+      border: 1px solid black;
+  }
+</pre>
+                <p>Also, try to use this trick sparingly for the reasons explained earlier.</p>
+
+            </article>
+
+
+            <article class="article three">
+                <p>3. <code>.x</code></p>
+
+                <p> This is the <code>class</code> selector. The <code>class</code> selector helps in targeting multiple elements at once. In earlier case of the <code>id</code> selector, we could only target only one elment at a time.</p>
+                <p>The <code>class</code> selector is useful when we want to apply CSS properties to a group of elements.</p>
+                <p>Suppose we want to target all those elements with a class of "box", then we could simply use the <code>class</code> selector. This would become more clear from the following code:</p>
+                <pre>
+ &lt;div&gt;
+  &lt;p class="box"&gt;This is line number one.&lt;/p&gt;
+  &lt;p&gt;This is line number two.&lt;/p&gt;
+  &lt;p class="box"&gt;This is line number three.&lt;/p&gt;
+  &lt;p&gt;This is line number four.&lt;/p&gt;
+ &lt;/div&gt;
+</pre>
+                <p>In order to target the elements having "box" class, we can use the <code>class</code> selector as:</p>
+                <pre>
+  .box {
+      color: blue;
+  }
+</pre>
+                <p>The above CSS selector would select all <code>&lt;p&gt;</code> tags having a class of "box" and their font colour would set to blue colour. </p>
+
+            </article>
+
+            <article class="article four">
+                <p>4. <code>x</code></p>
+                <p> In case one wants to target all elements on a page according to their type, not based on their <code>id</code> or <code>class</code>, then a <code>type</code> selector is used. For example, if one wants to target all the <code>ul</code>                    tags, then use, <code>ul { }</code></p>
+                <pre>
+  p {
+      color: red;
+  }
+
+  div {
+      text-align: center;
+  }
+</pre>
+            </article>
+            <h3 class="mt-5 mb-2">Combinator Selectors</h3>
+
+            <article class="article five">
+                <p>5. <code>X Y</code></p>
+                <p> Besides the above Basic Selectors, the most commonly used selector is the <code>descendant</code> selector.</p>
+                <p>For instance, if we want to make the font colour of <code>&lt;p&gt;</code> tags within the <code>&lt;section&gt;</code> as blue in the following code...</p>
+                <pre>
+ &lt;div&gt;
+    &lt;article&gt;
+      &lt;p&gt;It says that alcohol is a colourless volatile liquid formed by the fermentation of sugars&lt;/p&gt;
+      &lt;p&gt;and also notes its intoxicating effect on certain carbon-based life forms.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;section&gt;
+      &lt;p&gt;It says that the effect of drinking a Pan Galactic Gargle Blaster is like having your brains&lt;/p&gt;
+      &lt;p&gt;smashed out by a slice of leman wrapped around a large gold brick.&lt;/p&gt;
+    &lt;/section&gt;
+ &lt;/div&gt;
+</pre>
+
+                <p>Then, we can use the descendent selector in the following way.</p>
+                <pre>
+  section p {
+      color: blue;
+  }
+</pre>
+
+                <p>Although, the <code>descendant</code> selector could be used like this: <code>X Y Z a</code>, and it might be</p>
+                <p>convenient, but use this sparingly or when its absolutely necessary. Find out if there are other efficient ways to target the desired element.</p>
+            </article>
+
+            <article class="article six">
+                <p>6. <code>X + Y</code></p>
+                <p>This is the <code>adjacent</code> selector. This is used to select <i>only</i> the element that is immediately preceded by the former element. In the following example, the first <code>&lt;p&gt;</code> tag immediately after each <code>&lt;section&gt;</code>                    tag would have green text.</p>
+                <pre>
+ &lt;div&gt;
+  &lt;section&gt;
+    &lt;p&gt;The Babel fish is small, yellow and leech-like, and probably the oddest thing in the Universe.&lt;/p&gt;
+    &lt;p&gt;It feeds on braiwave energy recieved not from its own carrier but from those around it.&lt;/p&gt;
+    &lt;p&gt;It absorbs all unconscious mental frequencies from this brainwave energy to nourish itself.&lt;/p&gt;
+  &lt;/section&gt;
+  &lt;div&gt;
+    &lt;p&gt;It then excretes into mind of its carrier a telepathic matrix formed by combining the conscious&lt;/p&gt;
+    &lt;p&gt;thought frequencies with nerve signals picked from the speech centres of the brain.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;section&gt;
+    &lt;p&gt;The practical upshot of all this is that if you stick the Babel fish in your ear, you can instantly&lt;/p&gt;
+    &lt;p&gt;understand anything said to you in any form of language.&lt;/p&gt;
+  &lt;/section&gt;
+ &lt;/div&gt;
+</pre>
+                <p>The <code>adjacent</code> selector for our example would be like this:</p>
+                <pre>
+  section + p { 
+      color: green;
+  }
+</pre>
+                <p>This would target the <code>&lt;p&gt;</code> tags (given in the above HTML code) given on line numbers <b>3</b> and <b>12</b> and make thier text colour green.</p>
+
+
+            </article>
+
+            <article class="article seven">
+                <p>7. <code>X > Y</code></p>
+                <p>The difference between the standard <code>X Y</code> and <code>X > Y</code> is that the latter will only select direct children. So this, <code>X > Y</code> is a direct descendent combinator selector in CSS.</p>
+                <p>For example, the following will select only those <code>&lt;p&gt;</code> tags which are direct children of the <code>&lt;div&gt;</code> with an id of "selected". </p>
+                <pre>
+  #selected > p {
+      font-size: 20px;
+  }
+</pre>
+            </article>
+
+            <article class="article eight">
+                <p class="lead mt-4">The above mentioned CSS Selectors can be used in various combinations as per the requirements. Their combination or usage must be such that it takes the least effort for the browser to render it. This would increase the efficiency of the
+                    page. Therefore, a full understanding and judicious use of the CSS Selectors is required. </p>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="section-three" class="mt-5">
+        <div class="d-flex flex-column h-100">
+            <footer class="w-100 py-4 flex-shrink-0">
+                <div class="container py-4">
+                    <div class="row gy-4 gx-5">
+                        <div class="col-lg-4 col-md-6">
+                            <h5 class="h4 text-white">CssExplained</h5>
+                            <p class="small text-muted">CssExplained is a one stop site for all CSS related articles, queries, solutions and forum.</p>
+                            <p class="small" style="color: #41ff1f;">Best viewed on: Desktop.</p>
+
+                            <p id="copyright" class="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary" href="#">CssExplained.com</a></p>
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+                            <h5 class="text-white mb-3">CssExplained's</h5>
+                            <ul class="list-unstyled text-muted">
+                                <li><a href="/">About Us</a></li>
+                                <li><a href="/">Terms of Use</a></li>
+                                <li><a href="/">Get Started</a></li>
+                                <li><a href="/">FAQs</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+                            <h5 class="text-white mb-3">Interact</h5>
+                            <ul class="list-unstyled text-muted">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/">Community</a></li>
+                                <li><a href="/">Social Media</a></li>
+                                <li id="communicate">
+                                    Communicate&nbsp;&nbsp;<i class="bi bi-box-arrow-up-right"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <h5 class="text-white mb-3">Newsletter</h5>
+                            <p class="small text-muted">
+                                A lot of action happens on CssExplained. Subscribe our <span>bi-monthly</span> newsletter to remain updated and ahead in the world of web development and CSS.</p>
+                            <form action="#">
+                                <div class="input-group mb-3">
+                                    <input class="form-control" type="text" placeholder="Your Username" aria-label="Your Username" aria-describedby="button-addon2">
+                                    <button class="btn btn-primary" id="button-addon2" type="button"><i class="fas fa-paper-plane"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </section>
+
+    <section id="section-four">
+        <div id="top-button">
+            <a href="#top"><i class="fas fa-arrow-up fa-lg"></i></a>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script>
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+
+        var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        });
+    </script>
+
+    <script type="text/javascript">
+        //javascript to add line number at the beginning of line in each pre tag.
+        function addLineClass(pre) {
+            var lines = pre.innerHTML.split("\n");
+
+            while (pre.childNodes.length > 0) {
+                pre.removeChild(pre.childNodes[0]);
+            }
+
+            for (var i = 0; i < lines.length - 1; i++) {
+                var span = document.createElement("span");
+                span.className = "line";
+                span.innerHTML = lines[i];
+                pre.appendChild(span);
+                pre.appendChild(document.createTextNode("\n"));
+            }
+        }
+
+        window.addEventListener("load", () => {
+            var pres = document.getElementsByTagName("pre");
+            for (var i = 0; i < pres.length; i++) {
+                addLineClass(pres[i]);
+            }
+        }, false);
+    </script>
+    <script type="text/javascript">
+        // javascript to make the #menu-two invisible while scrolling down. #menu-two reappears while scrolling up.
+        $(document).ready(function() {
+            var previousScroll = 0;
+            $(window).scroll(() => {
+                var currentScroll = $(this).scrollTop();
+                console.log(`The current scroll: ${currentScroll}`);
+                if (currentScroll < 120) {
+                    showMenuTwo();
+                } else if (currentScroll > 0 && currentScroll < $(document).height() - $(window).height()) {
+                    if (currentScroll > previousScroll) 
+                        hideMenuTwo();
+                     else 
+                        showMenuTwo();
+                    
+                    previousScroll = currentScroll;
+                }
+            });
+            var menuTwoVar = document.querySelector("#menu-two");
+
+            function hideMenuTwo() {
+                $(menuTwoVar).removeClass("visible").addClass("hidden");
+            }
+
+            function showMenuTwo() {
+                $(menuTwoVar).removeClass("hidden").addClass("visible");
+            }
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        // javascript for the popup at communicate link given at page's footer.
+        commId = document.querySelector("#communicate");
+        commId.addEventListener("click", () => {
+            // to keep the Communicate's on click disable while the pop has not been crossed
+            commId.style.pointerEvents = 'none';
+
+            aTag = document.querySelector('#topHREF');
+            var divPopUp = document.createElement("div");
+            divPopUp.setAttribute("id", "pop-up");
+
+            aTag.insertAdjacentElement("afterend", divPopUp);
+
+            var popUpInnerHTML = `
+<div class="popUpContainer">
+    <h3>Stay CssExplained!</h3>
+    <p>Join CssExplained's <span>weekly</span> mailing list to remain super-updated.</p>
+    <input type="email" placeholder="email" size="24">
+    <button>Submit</button>
+    <div class="cross"><i class="fas fa-times"></i></div>
+</div>
+`;
+            divPopUp.innerHTML = popUpInnerHTML;
+
+            var crossButton = document.querySelector(".cross");
+
+            crossButton.addEventListener("click", () => {
+                //keep this - it would keep on adding elements to the DOM , just disable it.
+                //crossButton.parentElement.style.display = "none";
+                // or keep this: this would remove the element everytime;
+                var bodyElement = document.querySelector("body");
+                bodyElement.removeChild(divPopUp);
+
+                // once the popUp has been crossed, enable Communicate's click again
+                commId.style.pointerEvents = 'auto';
+            });
+        });
+    </script>
+
+</body>
+
+</html>
