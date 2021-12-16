@@ -162,6 +162,55 @@
         .indicator.Light {
             color: black;
         }
+        
+                
+        @media only screen and (min-width: 0px) and (max-width: 576px) {
+            p:nth-of-type(2),
+            p:nth-of-type(3) {
+                width: 85%;
+                letter-spacing: 1px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                column-count: 2;
+                text-align: justify;
+            }
+            .container {
+                height: 1130px;
+            }
+        }
+        
+        @media only screen and ( min-width: 577px) and ( max-width: 768px) {
+            p:nth-of-type(2),
+            p:nth-of-type(3) {
+                width: 85%;
+                letter-spacing: 1px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                column-count: 2;
+                text-align: justify;
+            }
+            .container {
+                height: 950px;
+            }
+        }
+        
+        @media only screen and ( min-width: 769px) and ( max-width: 992px) {
+            .container {
+                height: 880px;
+            }
+        }
+        
+        @media only screen and ( min-width: 993px) and ( max-width: 1200px) {
+            .container {
+                height: 700px;
+            }
+        }
+        
+        @media only screen and ( min-width: 1201px) and ( max-width: 1400px) {
+            .container {
+                height: 680px;
+            }
+        }
     </style>
 </head>
 
