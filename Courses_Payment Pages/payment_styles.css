@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Andada+Pro:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Shippori+Antique&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto+Slab&family=Shippori+Antique&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Poppins:wght@400&family=Roboto+Slab&family=Shippori+Antique&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #ffe1e1;
+}
+
+h1 {
+    font-family: 'Andada Pro', serif;
+    letter-spacing: 2px;
+    word-spacing: 7px;
+    color: indigo;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.main-container {
+    margin-bottom: 30px;
+}
+
+.payment-container {
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 4px 4px 8px #888888;
+    width: 80%;
+    /* border-radius: 10px; */
+    margin: 5px auto;
+    display: grid;
+    grid-template-columns: 62% 38%;
+}
+
+
+/* Styling for Left side Payment Container  */
+
+.payment-left {
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #fafafa;
+}
+
+#form {
+    margin: 10px auto;
+    padding: 20px 50px 40px 50px;
+}
+
+#form p {
+    color: #750175;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 19px;
+    font-family: 'Poppins', sans-serif;
+}
+
+::placeholder {
+    color: teal;
+}
+
+.form-input {
+    margin: 5px;
+}
+
+input {
+    all: unset;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #571313;
+    background-color: #fcfcfc;
+    border: 1px solid #9c009c;
+    box-sizing: border-box;
+}
+
+input:focus {
+    /* border: 2px solid indigo; */
+    background-color: white;
+    box-shadow: 2px 3px 5px #dd9fdd;
+}
+
+.form-input.five {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.input-cvv input {
+    width: 85%;
+}
+
+.button-div {
+    text-align: center;
+    margin-top: 35px;
+    width: 100%;
+}
+
+button {
+    all: unset;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    font-size: 18px;
+    padding: 10px;
+    margin-left: 3px;
+    width: 94%;
+    color: white;
+    background-color: #9c009c;
+}
+
+button:hover {
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    color: whitesmoke;
+    background-color: purple;
+}
+
+
+/*Styling for Right Side Payment Container */
+
+.payment-right {
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #ffffe4;
+    border-left: 4px solid #e2e2e2;
+}
+
+.right-one {
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    margin-top: 20px;
+    /* border-bottom: 1px solid grey; */
+}
+
+.right-one h3 {
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    color: indigo;
+}
+
+.right-one .course-para {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #025302;
+}
+
+.right-one .course-para:nth-of-type(2) {
+    margin-top: 10px;
+}
+
+.right-one .course-exp {
+    text-align: justify;
+    color: #535353;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.right-two {
+    font-family: 'Poppins', sans-serif;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.course-name,
+.course-duration {
+    color: green;
+    font-weight: bold;
+}
+
+.payment-sub-heading {
+    font-family: 'Roboto Slab', serif;
+    margin-left: 10px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(58, 58, 58);
+}
+
+.course-fees,
+.taxation-rate,
+.tax-amount,
+.grand-total {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.grand-total {
+    padding-top: 5px;
+    margin-top: 15px;
+}
+
+.two {
+    text-align: left;
+    color: #bb0000;
+}
+
+.one {
+    color: #505050;
+}
+
+.grand-total {
+    border-top: 1px solid grey;
+}
